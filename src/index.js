@@ -7,8 +7,11 @@ import Contact from './pages/Contact.js';
 import LogIn from './pages/LogIn.js';
 import Stores from './pages/Stores.js';
 import Main from "./pages/Main.js";
+import Products from "./pages/Products.js";
 
 export default function App() {
+
+
     return (
         <>
             <BrowserRouter>
@@ -19,6 +22,7 @@ export default function App() {
                     <Route path='/contact' element={<Contact />} />
                     <Route path='/login' element={<LogIn />} />
                     <Route path='/stores' element={<Stores />} />
+                    <Route path='/products' element={<Products />} />
                 </Routes>
             </BrowserRouter>
         </>
