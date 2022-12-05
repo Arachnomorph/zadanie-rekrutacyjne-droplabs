@@ -31,7 +31,7 @@ const Navigation = () => {
                         </li>
                         :
                         <li className={styles.navButton}>
-                            <Link to={`/login?returnUrl=${location.pathname}`} >Log in</Link>
+                            <Link to={`/login?returnUrl=${location.pathname}`}>Log in</Link>
                         </li>
                     }
                     <li className={styles.navButton}>
