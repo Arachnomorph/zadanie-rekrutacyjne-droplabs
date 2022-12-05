@@ -21,6 +21,7 @@ const Modal = ({ setModalVisible, allProducts, id}) => {
                 </div>
             </div>
         </>
+        
     );
 };
 
