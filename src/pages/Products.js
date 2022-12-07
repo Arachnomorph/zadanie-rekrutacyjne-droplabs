@@ -5,7 +5,9 @@ import Modal from "../Modal";
 const Products = () => {
     const [allProducts, setAllProducts] = useState([]);
     const [basketTotal, setBasketTotal] = useState(0);
-    const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible, setModalVisible] = useState('');
+
+
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -21,28 +23,36 @@ const Products = () => {
         setBasketTotal(prev => prev + allProducts[id].price)
     }
 
+
+    const productsList = allProducts.map(prod => (
+        <li key={prod.id} className={styles.productWrapper}>
+            <p className={styles.productName}>{prod.title}</p>
+            <img className={styles.productImg} src={prod.image} />
+            <div className={styles.priceWrapper}>
+                <p className={styles.productPrice}>{prod.price}</p>
+                <div>
+                    <button id={prod.id} className={styles.productButton} onClick={() => {
+                        setModalVisible(prod.id);
+                    }}>
+                        Info
+                    </button>
+                    {modalVisible === prod.id && <Modal prod={prod} setModalVisible={setModalVisible} />}
+                </div>
+                <button className={styles.productButton} onClick={addToBasket} id={prod.id}>
+                    Add to Basket
+                </button>
+            </div>
+        </li>
+    )
+    );
+
     return (
         <>
             <div className={styles.basketTotal}>
                 Basket total: {basketTotal}
             </div>
             <ul className={styles.productList}>
-                {allProducts.map(prod => (
-                    <li key={prod.id} className={styles.productWrapper}>
-                        <p className={styles.productName}>{prod.title}</p>
-                        <img className={styles.productImg} src={prod.image} />
-                        <div className={styles.priceWrapper}>
-                            <p className={styles.productPrice}>{prod.price}</p>
-                            <div>
-                                <button className={styles.productButton} onClick={() => setModalVisible(true)}>
-                                    Info
-                                </button>
-                                {modalVisible && <Modal id={prod.id} allProducts={allProducts} setModalVisible={setModalVisible} />}
-                            </div>
-                            <button className={styles.productButton} onClick={addToBasket} id={prod.id}>Add to Basket</button>
-                        </div>
-                    </li>
-                ))}
+                {productsList}
             </ul>
         </>
     )
