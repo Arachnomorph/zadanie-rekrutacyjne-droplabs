@@ -8,7 +8,9 @@ const Header = () => {
         <div className={styles.headerContainer}>
             <div className={styles.logoContainer}>
                 <Link to='/' className={styles.logo}>ABC Store</Link>
-                <img className={styles.languageIcon} src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/320px-Flag_of_the_United_Kingdom.svg.png" />
+                <div className={styles.languageIcon}>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/320px-Flag_of_the_United_Kingdom.svg.png" />
+                </div>
             </div>
             <Navigation />
         </div>

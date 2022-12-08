@@ -31,14 +31,14 @@ const Products = () => {
             <div className={styles.priceWrapper}>
                 <p className={styles.productPrice}>{prod.price}</p>
                 <div>
-                    <button id={prod.id} className={styles.productButton} onClick={() => {
+                    <button id={prod.id} className={styles.button} onClick={() => {
                         setModalVisible(prod.id);
                     }}>
                         Info
                     </button>
                     {modalVisible === prod.id && <Modal prod={prod} setModalVisible={setModalVisible} />}
                 </div>
-                <button className={styles.productButton} onClick={addToBasket} id={prod.id}>
+                <button className={styles.button} onClick={addToBasket} id={prod.id}>
                     Add to Basket
                 </button>
             </div>
@@ -47,14 +47,14 @@ const Products = () => {
     );
 
     return (
-        <>
+        <div className={styles.productsBackground}>
             <div className={styles.basketTotal}>
                 Basket total: {basketTotal}
             </div>
             <ul className={styles.productList}>
                 {productsList}
             </ul>
-        </>
+        </div>
     )
 };
 

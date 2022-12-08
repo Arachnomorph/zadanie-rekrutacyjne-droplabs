@@ -41,7 +41,7 @@ const Navigation = () => {
                         <Link to='/products' >Products</Link>
                     </li>
                     <li className={styles.navButton}>
-                        <Link to='/stores' >Our Stores</Link>
+                        <Link to='/stores' >Stores</Link>
                     </li>
                     <li className={styles.navButton}>
                         <Link to='/contact' >Contact</Link>

@@ -14,7 +14,7 @@ const LogIn = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.loginForm} onSubmit={handleSubmit(onSubmit)}>
       <input placeholder='email' type='email' minLength='3'
         {...register("email", {
           required: true,
@@ -26,7 +26,7 @@ const LogIn = () => {
           required: true,
           minLength: 3
         })} />
-      <input type="submit" className={styles.loginButton} />
+      <input type="submit" className={styles.button} />
     </form>
   )
 };
