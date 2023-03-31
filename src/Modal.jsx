@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './scss/styles.module.scss'
 
-const Modal = ({ setModalVisible, allProducts, id}) => {
+const Modal = ({ setModalVisible, allProducts}) => {
 
 
 
@@ -15,7 +15,7 @@ const Modal = ({ setModalVisible, allProducts, id}) => {
                     <p>{allProducts[1].description}</p>
                     <img className={styles.productImg} src={allProducts[1].image}/>
                     </div>
-                    <button onClick={() => { console.log(allProducts[3]); setModalVisible(false)}}>
+                    <button onClick={() => { setModalVisible(false)}}>
                         Ok
                     </button>
                 </div>

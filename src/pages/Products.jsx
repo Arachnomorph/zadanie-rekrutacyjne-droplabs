@@ -37,7 +37,7 @@ const Products = () => {
                                 <button className={styles.productButton} onClick={() => setModalVisible(true)}>
                                     Info
                                 </button>
-                                {modalVisible && <Modal id={prod.id} allProducts={allProducts} setModalVisible={setModalVisible} />}
+                                    {modalVisible && <Modal allProducts={allProducts} setModalVisible={setModalVisible} />}
                             </div>
                             <button className={styles.productButton} onClick={addToBasket} id={prod.id}>Add to Basket</button>
                         </div>
